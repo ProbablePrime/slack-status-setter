@@ -6,6 +6,8 @@ Slack recently release a [new feature allowing you to set your status](https://s
 
 This lead me to think, why not update it for everything? This experiment answers that.
 
+![](img/demo.png)
+
 ## Setup
 1. Clone
 1. `npm i`
