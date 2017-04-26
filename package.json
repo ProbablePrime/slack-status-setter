@@ -21,6 +21,7 @@
   "private": true,
   "devDependencies": {
     "@types/chai": "^3.4.34",
+    "@types/chai-as-promised": "0.0.30",
     "@types/config": "0.0.32",
     "@types/mocha": "^2.2.39",
     "@types/node": "^6.0.45",
@@ -28,6 +29,7 @@
     "@types/sinon-chai": "^2.7.27",
     "@types/slack-node": "^0.1.1",
     "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "mocha": "^3.0.2",
     "rimraf": "^2.6.0",
     "sinon": "^2.1.0",
@@ -39,9 +41,7 @@
     "typescript": "^2.1.6"
   },
   "dependencies": {
-    "@types/chai-as-promised": "0.0.30",
     "active-window": "git+https://github.com/shingotakagi/active-window.git",
-    "chai-as-promised": "^6.0.0",
     "config": "^1.25.1",
     "slack-node": "^0.1.8"
   }

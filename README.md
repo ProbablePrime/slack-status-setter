@@ -10,7 +10,7 @@ This lead me to think, why not update it for everything? This experiment answers
 
 ## Setup
 1. Clone
-1. `npm i`
+1. `npm i` or `yarn`
 1. Create `local.json` following the same format as `default.json`
     * Set your token to a valid [Legacy Slack API Token](https://api.slack.com/custom-integrations/legacy-tokens)
 1. Run `ts-node src\index.ts`
