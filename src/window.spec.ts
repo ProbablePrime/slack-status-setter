@@ -31,6 +31,3 @@ describe('window querying', () => {
         return expect(client.getWindowAppName()).to.be.eventually.rejectedWith(err);
     });
 });
-
-
-

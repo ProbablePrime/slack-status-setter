@@ -10,8 +10,8 @@ describe('classifier', () => {
                 result: {
                     emoji: 'keyboard',
                     text: 'Programming',
-                }
-            }
+                },
+            },
         ];
         const classifier = new Classifier(config);
 
