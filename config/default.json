@@ -1,0 +1,12 @@
+{
+    "token":"FOO",
+    "classifications": [
+        {
+            "pattern": "Visual Studio Code",
+            "result": {
+                "emoji": ":keyboard:",
+                "text": "Programming"
+            }
+        }
+    ]
+}
