@@ -12,16 +12,15 @@ export class SlackClient {
             this.slack.api(
                 STATUS_METHOD,
                 {
-                    profile:JSON.stringify({
+                    profile: JSON.stringify({
                         status_emoji: emoji,
                         status_text: text,
                     }),
                 },
-                (err: any, response: any) => {
+                (err: any) => {
                     if (err) {
                         reject(err);
                     }
-                    console.log(response);
                     resolve();
                 },
             );

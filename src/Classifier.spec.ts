@@ -6,7 +6,7 @@ describe('classifier', () => {
     it('finds matches', () => {
         const config: IClassification[] = [
             {
-                pattern: 'Visual Studio Code',
+                pattern: 'Code',
                 result: {
                     emoji: 'keyboard',
                     text: 'Programming',
@@ -15,6 +15,7 @@ describe('classifier', () => {
         ];
         const classifier = new Classifier(config);
 
-        expect(classifier.match('index.ts - slack-status - Visual Studio Code - Insiders')).to.eq(config[0].result);
+        expect(classifier.match('Code')).to.eq(config[0].result);
+        expect(classifier.match('')).to.eq(null, 'returns null on no matches');
     });
 });

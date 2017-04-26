@@ -41,6 +41,7 @@ function setStatus(status: IStatusResult) {
     .setStatus(status.emoji, status.text)
     .then(() => {
         currentResult = status;
+        console.log('ok', status.emoji, status.text);
     });
 }
 

@@ -14,12 +14,12 @@ describe('window querying', () => {
     }
 
     it('resolves with an app name', () => {
-        const title = 'test';
+        const app = 'test';
         const success = (callback: Function) => {
-            callback(<IWindow>{title: title});
+            callback(<IWindow>{app});
         };
         const client = setup(success);
-        return expect(client.getWindowAppName()).to.be.eventually.equal(title);
+        return expect(client.getWindowAppName()).to.be.eventually.equal(app);
     });
 
     it('rejects with an error', () => {
