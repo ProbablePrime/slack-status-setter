@@ -4,7 +4,7 @@ import { WindowClient } from './window';
 const query = new WindowClient(getActiveWindow);
 
 function doWork() {
-    query.getWindowTitle()
+    query.getWindowAppName()
     .then(res => console.log(res))
 }
 

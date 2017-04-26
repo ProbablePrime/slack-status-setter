@@ -2,6 +2,7 @@
 
 export interface IWindow {
     title: string;
+    app?: string;
 };
 
 export interface IWindowQueryFn {
@@ -11,12 +12,12 @@ export interface IWindowQueryFn {
 export class WindowClient {
     constructor(private queryFn: IWindowQueryFn) {}
 
-    public getWindowTitle(): Promise<string> {
+    public getWindowAppName(): Promise<string> {
         return new Promise<string>((resolve, reject) => {
             try {
                 this.queryFn(
                     (window: IWindow) => {
-                        resolve(window.title);
+                        resolve(window.app);
                     },
                     1,
                     0,

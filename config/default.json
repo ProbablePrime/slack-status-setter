@@ -2,7 +2,7 @@
     "token":"FOO",
     "classifications": [
         {
-            "pattern": "Visual Studio Code",
+            "pattern": "Code",
             "result": {
                 "emoji": ":keyboard:",
                 "text": "Programming"

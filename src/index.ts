@@ -16,7 +16,7 @@ let currentResult: IStatusResult = null;
 const interval = 4000;
 
 function doWork() {
-    query.getWindowTitle()
+    query.getWindowAppName()
     .then(res => classifier.match(res))
     .then(res => {
         if (!res) {
@@ -28,6 +28,10 @@ function doWork() {
         return setStatus(res);
     })
     .then(() => {
+        setTimeout(doWork, interval);
+    })
+    .catch((err: any) => {
+        console.log(err);
         setTimeout(doWork, interval);
     });
 }

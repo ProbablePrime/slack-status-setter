@@ -13,13 +13,13 @@ describe('window querying', () => {
         return new WindowClient(fn);
     }
 
-    it('resolves with a title', () => {
+    it('resolves with an app name', () => {
         const title = 'test';
         const success = (callback: Function) => {
             callback(<IWindow>{title: title});
         };
         const client = setup(success);
-        return expect(client.getWindowTitle()).to.be.eventually.equal(title);
+        return expect(client.getWindowAppName()).to.be.eventually.equal(title);
     });
 
     it('rejects with an error', () => {
@@ -28,7 +28,7 @@ describe('window querying', () => {
             throw err;
         };
         const client = setup(failure);
-        return expect(client.getWindowTitle()).to.be.eventually.rejectedWith(err);
+        return expect(client.getWindowAppName()).to.be.eventually.rejectedWith(err);
     });
 });
 
