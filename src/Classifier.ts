@@ -19,6 +19,7 @@ export class Classifier {
         if (matches.length) {
             return matches[0].result;
         }
+        console.log('no match for ' + title);
         return null;
     }
 }

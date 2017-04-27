@@ -10,13 +10,15 @@ export interface IWindowQueryFn {
 }
 
 export class WindowClient {
-    constructor(private queryFn: IWindowQueryFn) {}
+    constructor(private queryFn: IWindowQueryFn, private timeout: number = 2000) {}
 
     public getWindowAppName(): Promise<string> {
         return new Promise<string>((resolve, reject) => {
+            let resolved = false;
             try {
                 this.queryFn(
                     (window: IWindow) => {
+                        resolved = true;
                         resolve(window.app);
                     },
                     1,
@@ -25,6 +27,14 @@ export class WindowClient {
             } catch (err) {
                 reject(err);
             }
+            setTimeout(
+                () => {
+                    if (!resolved) {
+                        reject();
+                    }
+                },
+                this.timeout,
+            );
         });
     }
 }

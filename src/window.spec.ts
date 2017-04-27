@@ -10,7 +10,7 @@ use(<any>chaip);
 
 describe('window querying', () => {
     function setup(fn: IWindowQueryFn): WindowClient {
-        return new WindowClient(fn);
+        return new WindowClient(fn, 100);
     }
 
     it('resolves with an app name', () => {
@@ -29,5 +29,13 @@ describe('window querying', () => {
         };
         const client = setup(failure);
         return expect(client.getWindowAppName()).to.be.eventually.rejectedWith(err);
+    });
+
+    it('times out an unresponsive window request', () => {
+        const timeout = () => {
+            // DO NOTHING
+        };
+        const client = setup(timeout);
+        return expect(client.getWindowAppName()).to.be.eventually.rejected;
     });
 });
